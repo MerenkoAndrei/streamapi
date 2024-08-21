@@ -27,7 +27,6 @@ public class Solution {
     }
 
     private static Long allReadingTasks(List<List<Task>> tasks) {
-        return null;
-        // Ваш код здесь
+       return tasks.stream().filter(e->e.stream().anyMatch(z->z.getTags().contains("books"))).count();
     }
 }

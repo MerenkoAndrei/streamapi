@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Solution {
 
@@ -23,7 +24,6 @@ public class Solution {
     }
 
     private static List<Task> allReadingTasks(List<Task> tasks) {
-        return null;
-        // Ваш код здесь
+        return tasks.parallelStream().filter(el->el.getType()==TaskType.READING).distinct().toList();
     }
 }
